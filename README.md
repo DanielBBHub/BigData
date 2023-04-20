@@ -8,6 +8,19 @@ Los archivos desarrollados cumplen los siguientes propositos:
   -gestion5.py: "Mostrar las 5 acciones que m ́as han subido en la ́ultima semana y ́ultimo mes"  
   -gestion6.py: "Mostrar las 5 acciones que m ́as han bajado en la ultima semana y ́ultimo mes."  
   
-Para ejecutar los archivos se ha de copiar y pegar en la consola, en el directorio en los que se encuentren:  
+Para ejecutar los archivos en local se ha de copiar y pegar en la consola, en el directorio en los que se encuentren:  
 <pre><code>python gestionX.py dia1_fecha.csv dia2_fecha.csv dia3_fecha.csv dia4_fecha.csv</code></pre>  
   
+Para ejecutar los archivos dentro de HDFS, primero tendremos que iniciar los servicios relacionados:  
+<pre><code>start-dfs.sh</code></pre>  
+<pre><code>start-yarn.sh</code></pre>   
+
+Los archivos generados se han guardado dentro de un directorio "Ibex" con: 
+<pre><code>"Para crear el directorio Ibex"</code></pre>
+<pre><code>hdfs dfs -mkdir Ibex</code></pre>
+<pre><code>"Para copiar en el directorio Ibex"</code></pre>
+<pre><code>hdfs dfs -put diaY_fecha.csv Ibex</code></pre>   
+  
+Una vez guardados, los programas se ejecutan dentro de hadoop con los siguientes comandos:  
+<pre><code>"Sustituir la "X" (de 1-6) en gestionX.py y las Y (de 1-4) de todos los archivos de informacion"</code></pre>  
+<pre><code>python gestionX.py -r hadoop hdfs:///user/alumno/Ibex/diaY_fecha.csv --output-dir olimpiadas/medals_gdp</code></pre>
