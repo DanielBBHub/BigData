@@ -16,11 +16,11 @@ Para ejecutar los archivos dentro de HDFS, primero tendremos que iniciar los ser
 <pre><code>start-yarn.sh</code></pre>   
 
 Los archivos generados se han guardado dentro de un directorio "Ibex" con: 
-<pre><code>"Para crear el directorio Ibex"</code></pre>
-<pre><code>hdfs dfs -mkdir Ibex</code></pre>
-<pre><code>"Para copiar en el directorio Ibex"</code></pre>
-<pre><code>hdfs dfs -put diaY_fecha.csv Ibex</code></pre>   
+<pre><code>"Para crear el directorio Ibex"</code>
+<code>hdfs dfs -mkdir Ibex</code></pre>
+<pre><code>"Para copiar en el directorio Ibex"</code>
+<code>hdfs dfs -put diaY_fecha.csv Ibex</code></pre>   
   
 Una vez guardados, los programas se ejecutan dentro de hadoop con los siguientes comandos:  
-<pre><code>"Sustituir la "X" (de 1-6) en gestionX.py y las Y (de 1-4) de todos los archivos de informacion"</code></pre>  
-<pre><code>python gestionX.py -r hadoop hdfs:///user/alumno/Ibex/diaY_fecha.csv --output-dir olimpiadas/medals_gdp</code></pre>
+<pre><code>"Sustituir la "X" (de 1-6) en gestionX.py y las Y (de 1-4) de todos los archivos de informacion"</code>  
+<code>python gestionX.py -r hadoop hdfs:///user/alumno/Ibex/diaY_fecha.csv --output-dir olimpiadas/medals_gdp</code></pre>
